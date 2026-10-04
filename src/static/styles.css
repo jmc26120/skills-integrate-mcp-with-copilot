@@ -16,12 +16,61 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 24px 64px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.teacher-account-menu {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  text-align: left;
+}
+
+.teacher-account-menu summary {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  list-style: none;
+}
+
+.teacher-account-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.teacher-menu-panel {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  display: grid;
+  min-width: 180px;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  color: #333;
+}
+
+.teacher-menu-panel p {
+  overflow-wrap: anywhere;
+}
+
+.teacher-menu-panel button {
+  width: 100%;
 }
 
 header h1 {
@@ -190,6 +239,57 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+#signup-container[hidden] {
+  display: none;
+}
+
+#message {
+  max-width: 500px;
+  width: 100%;
+}
+
+#login-dialog {
+  width: min(420px, calc(100% - 32px));
+  padding: 24px;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+#login-dialog::backdrop {
+  background: rgba(20, 28, 55, 0.55);
+}
+
+#login-dialog form {
+  display: grid;
+  gap: 10px;
+}
+
+#login-dialog h3 {
+  color: #1a237e;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+#login-error {
+  color: #c62828;
+}
+
+@media (max-width: 520px) {
+  header {
+    padding: 62px 14px 18px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
 }
 
 footer {
